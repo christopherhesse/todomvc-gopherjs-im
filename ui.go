@@ -27,7 +27,7 @@ func Rerender() {
 }
 
 func Frame() {
-	startMs := js.Global.Get("Date").New().Call("getTime").Int()
+	startMs := js.Global.Get("Date").Call("now").Int()
 
 	rendering = true
 
@@ -96,7 +96,7 @@ func Frame() {
 
 	rendering = false
 
-	endMs := js.Global.Get("Date").New().Call("getTime").Int()
+	endMs := js.Global.Get("Date").Call("now").Int()
 	print("render", endMs-startMs, "ms")
 }
 
